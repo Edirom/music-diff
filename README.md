@@ -1,4 +1,8 @@
-# module2vue
+# music-diff
+
+**music-diff** is an application that tries to make a musical diff of two encoded music files. It is based on the VideApp-<sub>Arr</sub> from Beethovens Werkstatt. The actual comparison is done by a set of XSLTs, which is hosted by and used from the MEI-Garage.
+
+At this point, only encoding with an equal number of measures can be compared.
 
 ## Project setup
 ```

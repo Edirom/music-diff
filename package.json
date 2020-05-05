@@ -4,12 +4,13 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BeethovensWerkstatt/module2.git"
+    "url": "git+https://github.com/Edirom/music-diff.git"
   },
   "keywords": [
     "MEI",
     "Digital Editions",
-    "Beethovens Werkstatt"
+    "Beethovens Werkstatt",
+    "Music Diff"
   ],
   "author": "Johannes Kepper",
   "contributors": [
@@ -26,9 +27,9 @@
   ],
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/BeethovensWerkstatt/module2/issues"
+    "url": "https://github.com/Edirom/music-diff/issues"
   },
-  "homepage": "https://github.com/BeethovensWerkstatt/module2#readme",
+  "homepage": "https://github.com/Edirom/music-diff#readme",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -60,10 +61,8 @@
     "git-rev-sync": "^1.12.0",
     "gulp": "^4.0.0",
     "gulp-bump": "^3.1.3",
-    "gulp-exist": "^3.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-replace": "^1.0.0",
-    "gulp-zip": "^4.2.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
