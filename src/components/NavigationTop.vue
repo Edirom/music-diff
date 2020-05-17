@@ -1,17 +1,13 @@
 <template>
     <div id="navigationTop" class="navbar">
       <section class="navbar-section">
-        <SunburstButton v-if="modeObj.options.sunburst"/>
-        <!--<GotoMeasureButton v-if="modeObj.options.sunburst"/>-->
-        <PageNavigation v-if="modeObj.options.paging"/>
-        <ZoomControl v-if="modeObj.options.zoom"/>
-        <StaffSelectionButton v-if="modeObj.options.scoreDef"/>
-        <TransposeButton v-if="modeObj.options.transposition"/>
-        <ColorationButton v-if="modeObj.options.coloring"/>
+        <SunburstButton/>
+        <PageNavigation/>
+        <ZoomControl/>
       </section>
 
       <section class="navbar-section">
-          <SearchButton v-if="modeObj.options.search"/>
+
       </section>
     </div>
 </template>
@@ -19,33 +15,16 @@
 <script>
 
 import SunburstButton from '@/components/SunburstButton.vue'
-import GotoMeasureButton from '@/components/GotoMeasureButton.vue'
+//import GotoMeasureButton from '@/components/GotoMeasureButton.vue'
 import PageNavigation from '@/components/PageNavigation.vue'
 import ZoomControl from '@/components/ZoomControl.vue'
-import SearchButton from '@/components/SearchButton.vue'
-import StaffSelectionButton from '@/components/StaffSelectionButton.vue'
-import TransposeButton from '@/components/TransposeButton.vue'
-import ColorationButton from '@/components/ColorationButton.vue'
 
 export default {
   name: 'NavigationTop',
   components: {
     SunburstButton,
-    GotoMeasureButton,
     PageNavigation,
-    ZoomControl,
-    SearchButton,
-    StaffSelectionButton,
-    TransposeButton,
-    ColorationButton
-  },
-  computed: {
-    mode: function() {
-      return this.$store.getters.activeModeId
-    },
-    modeObj: function() {
-      return this.$store.getters.activeModeObject
-    }
+    ZoomControl
   }
 }
 </script>

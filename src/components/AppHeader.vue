@@ -1,17 +1,17 @@
 <template>
   <header class="navbar">
       <section class="navbar-section">
-          <a id="bwLogo" href="https://beethovens-werkstatt.de" class="navbar-brand mr-2" target="_blank">Beethovens Werkstatt</a>
+        <a id="meiLink" href="http://music-encoding.org" target="_blank" class="btn btn-link"><img alt="Music Encoding Initiative" id="meiLogo" src="../assets/meilogo.png"></a>
+        <a id="meiGarage" href="/" class="btn btn-link"><img alt="MEI Garage" id="garageLogo" src="../assets/meigarage.logo.png"></a>
       </section>
       <section class="navbar-center">
           <div>
-              <div class="appTitle">VideApp<sub>Arrangements</sub></div>
-              <!--<router-link to="/info" id="openModalBtn">info</router-link>-->
+              <div class="appTitle">MusicDiff</div>
           </div>
       </section>
       <section class="navbar-section">
-          <div id="noteID"></div>
-          <a id="githubLogo" href="https://github.com/BeethovensWerkstatt/videapp-arr" target="_blank" class="btn btn-link">GitHub</a>
+          <a id="vifeLink" href="https://edirom.de" target="_blank" class="btn btn-link"><img alt="ViFE" id="vifeLogo" src="../assets/vife-logo.svg"></a>
+          <a id="bwLink" href="https://beethovens-werkstatt.de" target="_blank" class="btn btn-link"><img alt="Beethovens Werkstatt" id="bwLogo" src="../assets/beethovensw_finale01.png"></a>
       </section>
   </header>
 </template>
@@ -29,19 +29,37 @@ export default {
 
 <style scoped lang="scss">
   header {
-      background-color: #e5e5e5;
-      border-bottom: .5px solid #999999;
-      padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-bottom: 0.5px solid #cccccc;
+    height: 2rem;
 
-      #bwLogo {
-          color: transparent;
-          background-image: url('../assets/beethovensw_finale01.png');
-          background-size: cover;
-          height: 42px;
+      #meiLink {
+        margin: 0;
+        padding: 0 1rem;
+        line-height: 1rem;
+        position: absolute;
+        top: 0.1rem;
+
+        #meiLogo {
+          width: 3rem;
+        }
+      }
+
+      #meiGarage {
+        margin: 0;
+        padding: 0 1rem;
+        line-height: 1rem;
+        position: absolute;
+        top: 0.1rem;
+        left: 4rem;
+
+        #garageLogo {
+          width: 3rem;
+        }
       }
 
       .appTitle {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         font-weight: 100;
 
         sub {
@@ -56,19 +74,36 @@ export default {
           text-align: center;
       }
 
-      #noteID {
-          margin-right: 1em;
-          opacity: .6;
-          font-size: .7em;
-          font-weight: 100;
-          text-align: left;
-      }
-
       #githubLogo {
           color: transparent;
           background-image: url('../assets/GitHub-Mark-120px-plus.png');
           background-size: 32px 32px;
           background-repeat: no-repeat;
+      }
+
+      #vifeLink {
+        margin: 0;
+        padding: 0 1rem;
+        line-height: 1rem;
+        position: absolute;
+        top: -0.2rem;
+
+        #vifeLogo {
+          width: 2.5rem;
+        }
+      }
+
+      #bwLink {
+        margin: 0;
+        padding: 0 1rem;
+        line-height: 1rem;
+        position: relative;
+        top: .2rem;
+        right: 3rem;
+
+        #bwLogo {
+          width: 4.5rem;
+        }
       }
 }
 </style>
