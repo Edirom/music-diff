@@ -4,6 +4,15 @@
         <SunburstButton/>
         <PageNavigation/>
         <ZoomControl/>
+        <div id="viewSettings">
+          <!--<div class="viewSettingItem">{{i18n('legend')}}<div>-->
+          <div class="viewSettingItem">
+            <i class="fas fa-tint id"></i> {{i18n('invariance')}}
+          </div>
+          <div class="viewSettingItem">
+            <i class="fas fa-tint deleted"></i> {{i18n('differentNotes')}}
+          </div>
+        </div>
       </section>
 
       <section class="navbar-section">
@@ -25,6 +34,11 @@ export default {
     SunburstButton,
     PageNavigation,
     ZoomControl
+  },
+  methods: {
+    i18n: function(code) {
+      return this.$i18n(code)
+    }
   }
 }
 </script>

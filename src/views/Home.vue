@@ -44,41 +44,12 @@ export default {
 <style scoped lang="scss">
 
 #fullBox {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   position: absolute;
-  top: 62.5px;
+  top: 40px;
   left: 0;
   right: 0;
   bottom: 0;
   overflow: hidden;
-
-  #navigationBox {
-    background-color: #f5f5f5;
-    border-right: 0.5px solid #666666;
-    padding: 0.5rem 1rem;
-    flex: 0 0 360px;
-    align-self: stretch;
-    overflow: auto;
-  }
-
-  #contentBox {
-    flex: 1 1 auto;
-    align-self: stretch;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-
-    width: calc(100% - 360px);
-
-    .toast {
-      width: unset;
-      margin: 3rem;
-    }
-  }
-
 }
 
 

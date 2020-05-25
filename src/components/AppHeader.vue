@@ -2,7 +2,7 @@
   <header class="navbar">
       <section class="navbar-section">
         <a id="meiLink" href="http://music-encoding.org" target="_blank" class="btn btn-link"><img alt="Music Encoding Initiative" id="meiLogo" src="../assets/meilogo.png"></a>
-        <a id="meiGarage" href="/" class="btn btn-link"><img alt="MEI Garage" id="garageLogo" src="../assets/meigarage.logo.png"></a>
+        <a id="meiGarage" href="https://meigarage.edirom.de" target="_blank" class="btn btn-link"><img alt="MEI Garage" id="garageLogo" src="../assets/meigarage.logo.png"></a>
       </section>
       <section class="navbar-center">
           <div>

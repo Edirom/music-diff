@@ -125,15 +125,25 @@ export default new Vuex.Store({
     compareFiles ({ commit }, combination) {
       return new Promise(resolve => {
         let url = 'https://meigarage.edirom.de/ege-webservice/Conversions/mei40Corpus%3Atext%3Axml/mei40Diff%3Atext%3Axml/'
+
         commit('START_LOADING', url)
+
+        let form = new FormData()
+
+        let blob = new Blob([combination], { type: 'text/xml' })
+        form.append('fileToConvert', blob, 'comparison.xml')
 
         fetch(url, {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
-          //mode: 'no-cors', // no-cors, *cors, same-origin
+          // mode: 'no-cors', // no-cors, *cors, same-origin
           headers: {
-            'Content-Type': 'text/plain'
+            // 'Content-Type': 'text/plain'
+            // 'Content-Type': 'multipart/form-data'
+            // fileToConvert
           },
-          body: combination // body data type must match "Content-Type" header
+          body: form
+
+          // combination // body data type must match "Content-Type" header
         })
           .then(response => {
             if (response.status !== 200) {

@@ -1,6 +1,6 @@
 {
   "name": "music-diff",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -8,6 +8,7 @@
   },
   "keywords": [
     "MEI",
+    "Music Encoding",
     "Digital Editions",
     "Beethovens Werkstatt",
     "Music Diff"
@@ -23,6 +24,16 @@
       "name": "Kristin Herold",
       "email": "herold@beethovens-werkstatt.de",
       "url": "https://github.com/krHERO"
+    },
+    {
+      "name": "Agnes Seipelt",
+      "email": "seipelt@beethovens-werkstatt.de",
+      "url": "https://github.com/aseipelt"
+    },
+    {
+      "name": "Ran Mo",
+      "email": "mo  @beethovens-werkstatt.de",
+      "url": "https://github.com/ran-mo"
     }
   ],
   "license": "AGPL-3.0",

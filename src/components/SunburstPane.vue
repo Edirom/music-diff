@@ -1,5 +1,5 @@
 <template>
-  <div v-if="visible" id="sunburst">
+  <div id="sunburst">
 
   </div>
 </template>
@@ -18,9 +18,9 @@ let unwatch
 export default {
   name: 'SunburstPane',
   computed: {
-    visible: function() {
+    /*visible: function() {
       return this.$store.getters.activeModeObject.options.sunburst
-    }
+    }*/
   },
   mounted () {
     this.setupSunburst()
@@ -28,40 +28,7 @@ export default {
     if (this.$store.getters.currentMEI !== null) {
       this.sunburstLoadData()
     }
-
-    unwatch = this.$store.watch((state, getters) => ({
-      request: getters.currentRequest, dataAvailable: (getters.currentMEI !== null), mode: getters.activeModeId, sunburstVisible: getters.activeModeObject.options.sunburst
-    }),(newState, oldState) => {
-
-      if (newState.sunburstVisible && !oldState.sunburstVisible) {
-        this.setupSunburst()
-        this.sunburstLoadData()
-      } if (!newState.sunburstVisible) {
-
-      } else if (newState.request !== oldState.request) {
-        // render data when already available
-        if (this.$store.getters.currentMEI !== null) {
-          this.sunburstLoadData()
-        }
-      } else if (newState.dataAvailable && !oldState.dataAvailable) {
-        this.sunburstLoadData()
-      } else if (newState.mode !== oldState.mode) {
-        this.sunburstLoadData()
-      }
-    })
   },
-  beforeDestroy () {
-    try {
-      unwatch()
-    } catch (err) {
-      console.log('[ERROR] Unable to remove watcher: ' + err)
-    }
-  },
-  /*destroyed () {
-    console.log('\nkilling time')
-    document.getElementById('sunburst').remove()
-    console.log('success')
-  },*/
   methods: {
     openPageByElementID: function(id) {
       try {
@@ -125,7 +92,7 @@ export default {
     },
     sunburstLoadData: function() {
       this.sunburstRemoveData()
-      let mode = this.$store.getters.activeModeId
+      let mode = 'geneticComparison'
       let mei = this.$store.getters.currentMEI
       let data = this.buildSunburstDataFromMEI(mei)
       sunburstObject.data = data
@@ -146,7 +113,7 @@ export default {
           .attr('stroke', function(d) {
 
               if(mode === 'geneticComparison' && d.data.level === 'measure') {
-                  let h = 40;
+                  let h = 0;
                   let s = '80%';
                   let l = Math.round((.5 + Number(d.data.idLevel) / 2) * 100) + '%';
                   let hsl = 'hsl(' + h + ',' + s + ',' + l + ')';
@@ -172,7 +139,7 @@ export default {
           .attr('fill', function(d) {
 
               if(mode === 'geneticComparison' && d.data.level === 'measure') {
-                  let h = 40;
+                  let h = 0;
                   let s = '80%';
                   let l = Math.round((.5 + Number(d.data.idLevel) / 2) * 100) + '%';
                   let hsl = 'hsl(' + h + ',' + s + ',' + l + ')';
@@ -221,21 +188,6 @@ export default {
           console.error('error1: ' + err)
       }
 
-      /*try {
-          sunburstObject.g.selectAll('text')
-          .data(root.descendants())
-          .enter()
-          .append('text')
-          .attr('fill', 'black')
-          .attr('transform', function(d) { return 'translate(' + sunburstObject.arc.centroid(d) + ')'; })
-          .attr('dy', '5px')
-          .attr('font', '10px')
-          .attr('text-anchor', 'middle')
-          .on('click', sunburstClick)
-          .text(function(d) { return d.data.name; });
-      } catch(err) {
-          console.error('error2: ' + err)
-      }*/
     },
 
     buildSunburstDataFromMEI: function(mei) {
@@ -278,6 +230,7 @@ export default {
                   }
 
                   if(measure.hasAttribute('differenceLevel')) {
+                    console.log('measure has differenceLevel')
                       measureObj.diffLevel = measure.getAttribute('differenceLevel');
                       measureObj.simLevel = measure.getAttribute('similarityLevel');
                       measureObj.idLevel = measure.getAttribute('identityLevel');

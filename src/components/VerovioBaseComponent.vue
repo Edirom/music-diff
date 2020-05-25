@@ -50,7 +50,7 @@ export default {
           } catch(err) {
             console.log('error: Unable to zoom: ' + err)
           }
-          console.log('done')
+          //console.log('done')
 
         }
 
@@ -143,7 +143,7 @@ export default {
           this.$store.dispatch('setMaxPage',newMaxPage)
         }
         if(oldPage === page) {
-          console.log('page stays the same')
+          // console.log('page stays the same')
           this.renderPage(page)
         } else {
           this.$store.dispatch('setPage',page)

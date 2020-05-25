@@ -83,6 +83,10 @@
     "de": "Hinzufügung",
     "en": "Addition"
   },
+  "differentNotes": {
+    "de": "Abweichende Noten",
+    "en": "Differenzes"
+  },
   "options": {
     "de": "Optionen",
     "en": "Options"

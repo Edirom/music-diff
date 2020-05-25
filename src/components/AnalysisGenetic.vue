@@ -1,17 +1,5 @@
 <template>
   <div id="analysisGenetic">
-    <div id="viewSettings">
-      <!--<div class="viewSettingItem">{{i18n('legend')}}<div>-->
-      <div class="viewSettingItem">
-        <i class="fas fa-tint id"></i> {{i18n('invariance')}}
-      </div>
-      <div class="viewSettingItem">
-        <i class="fas fa-tint deleted"></i> {{i18n('deletedNotes')}}
-      </div>
-      <div class="viewSettingItem">
-        <i class="fas fa-tint added"></i> {{i18n('addedNotes')}}
-      </div>
-    </div>
     <div id="svgContainer" class="geneticComparison"></div>
   </div>
 </template>
@@ -38,18 +26,14 @@ export default {
 <style lang="scss">
 
 $colorVariant1: #f51d1d;
-$colorVariant2: #3ce644;
+$colorVariant2: #f51d1d; //#1bb723;
 $neutralColor: #000000;
-$fadedColor: #999999;
+$fadedColor: #000000; //#999999;
 
-#analysisGenetic #viewSettings {
-  flex: 0 0 auto;
-  background-color: #f5f5f5;
-  border-bottom: .5px solid #999999;
-  padding: 10px 20px;
+#viewSettings {
   text-align: left;
   font-size: .7rem;
-  height: 2.2rem;
+  display: inline-block;
 
   .fa-tint {
     &.id {
@@ -61,6 +45,11 @@ $fadedColor: #999999;
     &.added {
       color: $colorVariant2;
     }
+  }
+
+  .viewSettingItem {
+    display: inline-block;
+    margin: 0 1rem 0 0;
   }
 }
 
